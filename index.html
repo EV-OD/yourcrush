@@ -13,7 +13,7 @@
     />
   </head>
   <body>
-    <audio muted autoplay id="music">
+    <audio muted id="music">
       <source
         src="./src/assets/song.mp3"
         type="audio/mpeg"
@@ -25,7 +25,11 @@
     <script>
       const music = document.getElementById("music");
       music.muted = false;
-      music.volume = 0.1;
+      music.volume = 0.6;
+      var audio= document.getElementById('music');
+      document.addEventListener('click', function() {
+        audio.play();
+      });
     </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>

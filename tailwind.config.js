@@ -2,7 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "rgb(255, 124, 151)",
+        dark: "hsl(347.63, 100%, 65.31%)",
+      },
+      fontFamily: {
+        newSun: ["New Sun Regular", "sans-serif"],
+      },
+    },
   },
   plugins: [require("daisyui")],
 };

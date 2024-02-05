@@ -12,7 +12,7 @@ import {
   DocumentReference,
   onSnapshot,
 } from "firebase/firestore";
-import useApp from "./assets/hooks/useApp";
+import useApp from "./hooks/useApp";
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import sha256 from "crypto-js/sha256";
@@ -25,18 +25,6 @@ import {
 function hashString(str: string) {
   const hashedStr = sha256(str).toString();
   return hashedStr;
-}
-
-function ConvertToHash(
-  user: any,
-  crush: { firstName: string; lastName: string; programme: string }
-) {
-  const hash = `${hashString(
-    user?.displayName ? user.displayName : ""
-  )}.${hashString(crush.firstName)}.${hashString(crush.lastName)}.${hashString(
-    crush.programme
-  )}`;
-  return hash;
 }
 
 export function useCFirestore() {
@@ -84,7 +72,7 @@ export function useCFirestore() {
       const limitExceeded = await isExceeded(user);
       setCrushIsExceeded(limitExceeded);
     };
-    checkCrushLimit();
+    if (user) checkCrushLimit();
   }, [user]);
 
   async function addCrush(user: any, crushHash: string) {
@@ -118,7 +106,7 @@ export function useCFirestore() {
       const docRef = doc(db, "yourcrush", user.uid);
       const docData = await getDocData(docRef);
 
-      return docData.crushHash?.length >= 3 || false;
+      return docData.crushHash?.length >= 1 || false;
     } catch (e) {
       console.error("Error checking crush limit: ", e);
       return true;
@@ -149,7 +137,6 @@ export function useCFirestore() {
     loadingCrushList,
     errorCrushList,
     getCrushList,
+    isExceeded,
   };
 }
-
-export default ConvertToHash;

@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "src/components/3d/transformed/Flower.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

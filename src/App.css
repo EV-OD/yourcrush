@@ -1,0 +1,9 @@
+.login {
+  background-image: url("./assets/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-text {
+  font-family: "Great Vibes", cursive;
+}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Loading from "../widgets/loading";
 import ConvertToHash, { useCFirestore } from "../../utils";
 import { useAuthState } from "react-firebase-hooks/auth";
-import useApp from "../../assets/hooks/useApp";
+import useApp from "../../hooks/useApp";
 import { User } from "firebase/auth";
 
 const CrushRegistrationPage: React.FC = () => {

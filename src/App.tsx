@@ -5,6 +5,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import Intro from "./pages/intro";
 import React from "react";
+import Home from "./pages/home";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -30,7 +31,7 @@ function App() {
   return (
     <>
       <AppProvider.Provider value={app}>
-        <Intro />
+        <Home />
       </AppProvider.Provider>
     </>
   );

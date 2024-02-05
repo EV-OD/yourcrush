@@ -2,7 +2,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import useApp from "../hooks/useApp";
 import Login from "./login";
 import DashBoard from "./dashboard";
-import Navbar from "../components/widgets/navbar";
 import usePageStore from "../store/pageStore";
 import HashPage from "./hashPage";
 import ThankYouPage from "./thankyou";

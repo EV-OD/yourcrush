@@ -35,6 +35,11 @@ function HashPage() {
           hash: hashString(myRollNumber + crushRollNumber),
           text: myRollNumber + crushRollNumber,
         };
+      } else {
+        return {
+          hash: hashString(crushRollNumber + myRollNumber),
+          text: crushRollNumber + myRollNumber,
+        };
       }
     } else {
       console.log("Error in finding love hash");

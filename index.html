@@ -11,11 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/assets/index-b3n8kynd.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-vBlqKepS.css">
+    <script type="module" crossorigin src="/assets/index-w4yIJ35f.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B_ts7Clt.css">
   </head>
   <body>
-    <audio muted autoplay id="music">
+    <audio muted id="music">
       <source
         src="/assets/song-k94pTcTR.mp3"
         type="audio/mpeg"
@@ -27,7 +27,11 @@
     <script>
       const music = document.getElementById("music");
       music.muted = false;
-      music.volume = 0.1;
-    </script>
+      music.volume = 0.3;
+      var audio= document.getElementById('music');
+      document.addEventListener('click', function() {
+        audio.play();
+      });
+    </script>
   </body>
 </html>

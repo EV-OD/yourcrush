@@ -106,7 +106,7 @@ function HashPage() {
             Valentine's Day Special
           </h1>
         </div>
-        <div className="right w-full flex flex-col -ml-10 realtive justify-center items-center z-20">
+        <div className="right w-full flex flex-col realtive justify-center items-center z-20">
           <div className="flex gap-4 flex-col items-center">
             <div className="top flex md:flex-row flex-col items-center md:gap-10 w-max md:mt-0 mt-5">
               <div className="left">

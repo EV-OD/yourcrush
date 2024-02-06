@@ -52,27 +52,16 @@ function Login() {
   const handleSearchPersonOnDb = async () => {
     try {
       setIsLoading(true);
-      let data: {
-        name: string;
-        year?: string;
-        course?: string;
-        roll_number?: string;
-      } = {
+      let data = {
         name: crushName.toLowerCase(),
         year: year.toLowerCase(),
         course: course.toLowerCase(),
         roll_number: rollNumber.toLowerCase(),
       };
-      if (year.length == 0) {
-        delete data.year;
-      }
-      if (course.length == 0) {
-        delete data.course;
-      }
-      if (rollNumber.length == 0) {
-        delete data.roll_number;
-      }
-      console.log(data);
+
+      // Remove empty fields from the data object
+      Object.keys(data).forEach((key) => data[key] === "" && delete data[key]);
+
       let res = await fetch("https://v.anuj-paudel.com.np/search", {
         method: "POST",
         headers: {
@@ -80,67 +69,70 @@ function Login() {
         },
         body: JSON.stringify(data),
       });
-      if (res.status == 200) {
-        let data = await res.json();
-        if (data && data.success) {
-          if (data.success.name) {
-            let roll_number = data.success.roll_number;
-            let year = roll_number.slice(0, 2);
-            let course = roll_number.slice(2, 5);
+
+      // If the primary API fails, try the alternative one
+      if (res.status !== 200) {
+        res = await fetch("https://pocolocojunior1.pythonanywhere.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+      }
+
+      if (res.status === 200) {
+        const responseData = await res.json();
+        if (responseData.success) {
+          if (responseData.success.name) {
+            const rollNumber = responseData.success.roll_number;
+            const year = rollNumber.slice(0, 2);
+            const course = rollNumber.slice(2, 5);
             setCrushDetail({
-              fullname: data.success.name,
+              fullname: responseData.success.name,
               year,
               course,
-              roll_number: roll_number,
+              roll_number: rollNumber,
             });
             setCurrentPage("hashPage");
             return true;
           } else {
-            if (data.success == "Multiple Person Found") {
-              setModalData({
-                title: "Error",
-                content:
-                  data.success +
-                  " Please Enter More Detail to find the person.",
-              });
-            } else {
-              setModalData({
-                title: "Error",
-                content: data.success,
-              });
-            }
+            const errorMessage =
+              responseData.success === "Multiple Person Found"
+                ? `${responseData.success} Please Enter More Detail to find the person.`
+                : responseData.success;
+            setModalData({
+              title: "Error",
+              content: errorMessage,
+            });
             showDialog();
             return false;
           }
         } else {
-          showDialog();
-
           setModalData({
             title: "Error",
             content: "No Data Found",
           });
-          setIsLoading(false);
+          showDialog();
           return false;
         }
       } else {
-        showDialog();
-
         setModalData({
           title: "Error",
           content: "Something went wrong",
         });
-        setIsLoading(false);
+        showDialog();
         return false;
       }
-    } catch (e) {
-      showDialog();
-
+    } catch (error) {
       setModalData({
         title: "Error",
         content: "Something went wrong",
       });
-      setIsLoading(false);
+      showDialog();
       return false;
+    } finally {
+      setIsLoading(false);
     }
   };
 

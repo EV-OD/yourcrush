@@ -23,6 +23,7 @@ html {
 }
 :root {
   --infinte: 1;
+  --initialTime: 4s;
 }
 
 .heart-loader {
@@ -37,15 +38,15 @@ html {
 }
 .heart-loader__group {
   transform-origin: 0 90px;
-  -webkit-animation: group-anim 7s 0.1s var(--infinte);
-  animation: group-anim 7s 0.1s var(--infinte);
+  -webkit-animation: group-anim var(--initialTime) 0.1s var(--infinte);
+  animation: group-anim var(--initialTime) 0.1s var(--infinte);
 }
 .heart-loader__square {
   stroke: grey;
   stroke-dasharray: 240, 240;
   stroke-dashoffset: 240;
-  -webkit-animation: square-anim 7s 0.1s var(--infinte);
-  animation: square-anim 7s 0.1s var(--infinte);
+  -webkit-animation: square-anim var(--initialTime) 0.1s var(--infinte);
+  animation: square-anim var(--initialTime) 0.1s var(--infinte);
 }
 .heart-loader__circle {
   stroke: grey;
@@ -54,20 +55,20 @@ html {
   transform-origin: 60px 30px;
 }
 .heart-loader__circle.m--left {
-  -webkit-animation: left-circle-anim 7s 0.1s var(--infinte);
-  animation: left-circle-anim 7s 0.1s var(--infinte);
+  -webkit-animation: left-circle-anim var(--initialTime) 0.1s var(--infinte);
+  animation: left-circle-anim var(--initialTime) 0.1s var(--infinte);
 }
 .heart-loader__circle.m--right {
-  -webkit-animation: right-circle-anim 7s 0.1s var(--infinte);
-  animation: right-circle-anim 7s 0.1s var(--infinte);
+  -webkit-animation: right-circle-anim var(--initialTime) 0.1s var(--infinte);
+  animation: right-circle-anim var(--initialTime) 0.1s var(--infinte);
 }
 .heart-loader__heartPath {
   stroke: #db3434;
   fill: transparent;
   stroke-dasharray: 308.522, 308.522;
   stroke-dashoffset: 308.522;
-  -webkit-animation: heart-anim 7s 0.1s var(--infinte);
-  animation: heart-anim 7s 0.1s var(--infinte);
+  -webkit-animation: heart-anim var(--initialTime) 0.1s var(--infinte);
+  animation: heart-anim var(--initialTime) 0.1s var(--infinte);
 }
 
 @-webkit-keyframes square-anim {

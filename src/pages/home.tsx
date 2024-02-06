@@ -13,7 +13,7 @@ function Home() {
     id = setTimeout(() => {
       setOpacity(1);
       setInitialAnimationFinished(true);
-    }, 6500);
+    }, 4000);
     return () => clearTimeout(id);
   }, []);
 

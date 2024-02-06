@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YourCrush</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,14 +13,20 @@
     />
   </head>
   <body>
-    <audio autoplay>
+    <audio muted autoplay id="music">
       <source
         src="./src/assets/song.mp3"
         type="audio/mpeg"
-        onerror="alert(event);console.log(event);"
+        onerror="alert('Due to network issue, song will not be played');"
       />
     </audio>
     <div id="root"></div>
+
+    <script>
+      const music = document.getElementById("music");
+      music.muted = false;
+      music.volume = 0.1;
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

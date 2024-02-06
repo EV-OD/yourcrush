@@ -15,7 +15,8 @@ html {
 
 @font-face {
   font-family: New Sun Regular;
-  src: url("/src/assets/fonts/New\ Sun\ Regular.ttf");
+  /* src: url("/src/assets/fonts/New\ Sun\ Regular.ttf"); */
+  src: url("/fonts/New\ Sun\ Regular.ttf");
 }
 #root {
   width: 100%;

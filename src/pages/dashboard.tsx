@@ -252,7 +252,7 @@ function Login() {
               Roll Number <span className="text-xs">(Optional)</span>
             </label>
             <input
-              type="text"
+              type="number"
               id="roll_number"
               value={rollNumber}
               placeholder="eg. 070"

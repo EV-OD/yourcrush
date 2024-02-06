@@ -12,7 +12,7 @@ function Modal() {
     }
   }, [modalState]);
   return (
-    <dialog id="my_modal_1" className="modal">
+    <dialog id="my_modal_1" className="modal w-screen h-screen">
       <div className="modal-box bg-red-400 text-white">
         <h3 className="font-bold text-lg">{modalData.title}</h3>
         <p className="py-4">{modalData.content}</p>

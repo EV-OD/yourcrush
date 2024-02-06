@@ -1,8 +1,6 @@
-import React from "react";
-
 function LoveWaiting() {
   return (
-    <div>
+    <div className="h-screen w-screen overflow-hidden absolute top-0 left-0">
       <svg
         className="heart-loader"
         xmlns="http://www.w3.org/2000/svg"

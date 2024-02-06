@@ -77,7 +77,7 @@ function Login() {
       </div>
       <div className="heroSection flex w-full -translate-y-20 z-20 md:flex-row flex-col">
         <div className="left flex flex-col md:text-center md:w-1/2 w-full justify-center md:-translate-y-0 -translate-y-20 ">
-          <h1 className="hero-text xl:text-8xl lg:text-7xl text-6xl text-center md:-translate-y-0 -translate-y-10 text-red-600 md:mx-0 mx-auto">
+          <h1 className="hero-text xl:text-8xl lg:text-7xl text-5xl text-center md:-translate-y-0 -translate-y-10 text-red-600 md:mx-0 mx-auto">
             Valentine's Day
             <br />
             Special

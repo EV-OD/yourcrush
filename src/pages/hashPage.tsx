@@ -97,7 +97,7 @@ function HashPage() {
         <img
           src={couple2}
           alt="love"
-          className="absolute top-1/2 -translate-y-1/2 left-10 2xl:w-[350px] w-[300px] lg:block hidden"
+          className="absolute top-1/2 -translate-y-1/2 left-10 w-[200px] lg:block hidden"
         />
       </div>
       <div className="heroSection flex w-full -translate-y-20 z-20 flex-col justify-center items-center">
@@ -110,11 +110,11 @@ function HashPage() {
           <div className="flex gap-4 flex-col items-center">
             <div className="top flex md:flex-row flex-col items-center md:gap-10 w-max md:mt-0 mt-5">
               <div className="left">
-                <h1 className="font-newSun text-red-600 md:text-5xl text-2xl">
-                  YOU
+                <h1 className="uppercase font-newSun text-red-600 md:text-5xl text-2xl">
+                  {user?.displayName}
                 </h1>
-                <span className="text-xl text-red-400">
-                  Name:{user?.displayName}
+                <span className="text-xl text-red-400 lowercase text-center">
+                  {user?.email?.split("@")[0].split(".")[0]}
                 </span>
               </div>
               <div className="mid">
@@ -125,11 +125,11 @@ function HashPage() {
                 />
               </div>
               <div className="right">
-                <h1 className="font-newSun text-red-600 md:text-5xl text-2xl">
-                  Crush
+                <h1 className="font-newSun text-red-600 md:text-5xl text-2xl uppercase">
+                  {crushDetail.fullname}
                 </h1>
-                <span className="text-xl text-red-400">
-                  Name: {crushDetail.fullname}
+                <span className="text-xl text-red-400 text-center">
+                  {crushDetail.roll_number}
                 </span>
               </div>
             </div>
@@ -137,7 +137,7 @@ function HashPage() {
               <h1 className=" text-red-600 md:text-5xl text-2xl mt-10">
                 Your Love Hash
               </h1>
-              <p className="text-xl font-semibold text-black w-60 text-ellipsis overflow-hidden">
+              <p className="text-xl font-semibold text-black w-60 overflow-auto">
                 {loveHash}
               </p>
               <div className="button_group flex gap-4">

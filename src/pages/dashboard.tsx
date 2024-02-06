@@ -175,19 +175,23 @@ function Login() {
         <img
           src={couple2}
           alt="love"
-          className="absolute top-1/2 -translate-y-1/2 left-10 2xl:w-[350px] xl:w-[300px] lg:block hidden"
+          className="absolute top-1/2 -translate-y-1/2 left-10 w-[200px] lg:block hidden"
         />
       </div>
-      <div className="heroSection flex w-full -translate-y-20 z-20 flex-col justify-center items-center">
-        <div className="left flex flex-col md:text-center w-full justify-center md:-translate-y-0">
-          <h1 className="hero-text xl:text-9xl lg:text-8xl md:text-6xl text-5xl mt-20 mb-3 text-center md:-translate-y-0 text-red-600 md:mx-0 mx-auto">
+      <div className="heroSection flex w-full z-20 flex-col items-center md:-translate-y-0 -translate-y-10">
+        <div className="left flex flex-col md:text-center w-full justify-center">
+          <h1 className="hero-text xl:text-9xl lg:text-8xl md:text-6xl text-5xl mb-3 text-center text-red-600 md:mx-0 mx-auto">
             Valentine's Day Special
           </h1>
         </div>
-        <div className="right w-full flex flex-col -ml-10 realtive justify-center items-center z-20">
-          <div className="input_area grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-1 2xl:w-[800px] xl:w-[700px] lg:w-[500px] md:mt-10">
+        <div className="right w-full flex flex-col realtive justify-center items-center z-20">
+          <div className="input_area grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-1 2xl:w-[800px] xl:w-[700px] lg:w-[500px] sm:w-[350px] w-[300px] md:mt-10">
             <h1 className="md:text-6xl text-3xl font-bold text-red-700 font-newSun tracking-wider whitespace-nowrap">
               Crush Detail
+              <br />
+              <span className="text-[0.4em] font-normal italic font-sans">
+                you can search crush with partial name also
+              </span>
             </h1>
             <span></span>
             <label
@@ -200,8 +204,9 @@ function Login() {
               type="text"
               id="Full Name"
               value={crushName}
+              placeholder="eg. Anuj Pa"
               onChange={(e) => setCrushName(e.target.value)}
-              className="bg-red-200 py-1 px-2 text-red-900 font-semibold"
+              className="bg-red-200 placeholder:font-light placeholder:text-gray-400 py-1 px-2 text-red-900 font-semibold"
             />
 
             <label
@@ -250,7 +255,7 @@ function Login() {
             </select>
             <label
               htmlFor="roll_number"
-              className="text-red-600 text-lg font-semibold"
+              className="text-red-600 text-lg font-semibold "
             >
               Roll Number <span className="text-xs">(Optional)</span>
             </label>
@@ -258,8 +263,9 @@ function Login() {
               type="text"
               id="roll_number"
               value={rollNumber}
+              placeholder="eg. 070"
               onChange={(e) => setRollNumber(e.target.value)}
-              className="bg-red-200 py-1 px-2 text-red-900 font-semibold"
+              className="bg-red-200 py-1 px-2 text-red-900 font-semibold placeholder:font-light placeholder:text-gray-400"
             />
             <div className="flex gap-6">
               <button

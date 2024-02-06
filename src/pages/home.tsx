@@ -5,7 +5,7 @@ import Intro from "./intro";
 import usePageStore from "../store/pageStore";
 
 function Home() {
-  const [opacity, setOpacity] = useState(1);
+  const [opacity, setOpacity] = useState(0);
   const { setInitialAnimationFinished } = useTimingStore();
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function Home() {
       <div style={{ opacity: opacity }} className="w-full h-full">
         <Intro />
       </div>
-      {/* <LoveWaiting /> */}
+      <LoveWaiting />
     </div>
   );
 }

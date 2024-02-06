@@ -72,7 +72,7 @@ function Login() {
 
       // If the primary API fails, try the alternative one
       if (res.status !== 200) {
-        res = await fetch("https://pocolocojunior1.pythonanywhere.com", {
+        res = await fetch("https://pocolocojunior1.pythonanywhere.com/search", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -172,12 +172,12 @@ function Login() {
       </div>
       <div className="heroSection flex w-full z-20 flex-col items-center md:-translate-y-0 -translate-y-10">
         <div className="left flex flex-col md:text-center w-full justify-center">
-          <h1 className="hero-text xl:text-9xl lg:text-8xl md:text-6xl text-5xl mb-3 text-center text-red-600 md:mx-0 mx-auto">
+          <h1 className="hero-text xl:text-9xl lg:text-8xl md:text-6xl text-5xl mb-3 text-center text-red-600 md:mx-0 mx-auto small:text-6xl ">
             Valentine's Day Special
           </h1>
         </div>
         <div className="right w-full flex flex-col realtive justify-center items-center z-20">
-          <div className="input_area grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-1 2xl:w-[800px] xl:w-[700px] lg:w-[500px] sm:w-[350px] w-[300px] md:mt-10">
+          <div className="input_area grid md:grid-cols-2 grid-cols-1 md:gap-8 small:gap-3 gap-1 2xl:w-[800px] xl:w-[700px] lg:w-[500px] sm:w-[350px] w-[300px] md:mt-10">
             <h1 className="md:text-6xl text-3xl font-bold text-red-700 font-newSun tracking-wider whitespace-nowrap">
               Crush Detail
               <br />

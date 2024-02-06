@@ -65,102 +65,124 @@ function HashPage() {
     setIsLoading(false);
     setCurrentPage("thankyou");
   };
+  const handleShowModal = () => {
+    let modal = document.getElementById("my_modal_2") as HTMLDialogElement;
+    if (modal) {
+      modal.showModal();
+    }
+  };
 
   return (
-    <div className="login w-full h-full flex justify-center items-center relative">
-      <div className="decoration absolute inset-0 overflow-hidden">
-        <img
-          src={arrowman}
-          alt="love"
-          className="absolute md:bottom-0 -bottom-20 md:-right-24 -right-24 2xl:w-[550px] xl:w-[500px] md:w-[450px] w-[300px] md:-rotate-45 rotate-[30] z-10  "
-        />
-        <img
-          src={topleft}
-          alt="love"
-          className="absolute object-cover top-0 left-0 w-56"
-        />
-        <img
-          src={topright}
-          alt="love"
-          className=" absolute object-cover top-0 right-0 w-56 md:block hidden"
-        />
-        <img
-          src={topright}
-          alt="love"
-          className="absolute object-cover bottom-0 left-0 w-56 scale-[-1] md:block hidden"
-        />
-        <img
-          src={bottomright}
-          alt="love"
-          className="absolute object-cover bottom-0 right-0 w-56 md:block hidden z-20"
-        />
-        <img
-          src={couple2}
-          alt="love"
-          className="absolute top-1/2 -translate-y-1/2 left-10 w-[200px] lg:block hidden"
-        />
-      </div>
-      <div className="heroSection flex w-full -translate-y-20 z-20 flex-col justify-center items-center">
-        <div className="left flex flex-col md:text-center w-full justify-center md:-translate-y-0">
-          <h1 className="hero-text xl:text-9xl lg:text-8xl md:text-6xl text-5xl mt-20 mb-3 text-center md:-translate-y-0 text-red-600 md:mx-0 mx-auto">
-            Valentine's Day Special
-          </h1>
+    <>
+      <dialog id="my_modal_2" className="modal w-screen h-screen">
+        <div className="modal-box bg-red-400 text-white">
+          <h3 className="font-bold text-lg">Are you sure?</h3>
+          <p className="py-4">You cannot change it again</p>
+          <div className="modal-action">
+            <form method="dialog" className="flex gap-4 text-white">
+              <button className="btn bg-red-500 px-5">No</button>
+              <button className="btn bg-sky-500 px-5" onClick={handleLockCrush}>
+                Yes
+              </button>
+            </form>
+          </div>
         </div>
-        <div className="right w-full flex flex-col realtive justify-center items-center z-20">
-          <div className="flex gap-4 flex-col items-center">
-            <div className="top flex md:flex-row flex-col items-center md:gap-10 w-max md:mt-0 mt-5">
-              <div className="left">
-                <h1 className="uppercase font-newSun text-red-600 md:text-5xl text-2xl">
-                  {user?.displayName}
+      </dialog>
+      <div className="login w-full h-full flex justify-center items-center relative">
+        <div className="decoration absolute inset-0 overflow-hidden">
+          <img
+            src={arrowman}
+            alt="love"
+            className="absolute md:bottom-0 -bottom-20 md:-right-24 -right-24 2xl:w-[550px] xl:w-[500px] md:w-[450px] w-[300px] md:-rotate-45 rotate-[30] z-10  "
+          />
+          <img
+            src={topleft}
+            alt="love"
+            className="absolute object-cover top-0 left-0 w-56"
+          />
+          <img
+            src={topright}
+            alt="love"
+            className=" absolute object-cover top-0 right-0 w-56 md:block hidden"
+          />
+          <img
+            src={topright}
+            alt="love"
+            className="absolute object-cover bottom-0 left-0 w-56 scale-[-1] md:block hidden"
+          />
+          <img
+            src={bottomright}
+            alt="love"
+            className="absolute object-cover bottom-0 right-0 w-56 md:block hidden z-20"
+          />
+          <img
+            src={couple2}
+            alt="love"
+            className="absolute top-1/2 -translate-y-1/2 left-10 w-[200px] lg:block hidden"
+          />
+        </div>
+        <div className="heroSection flex w-full -translate-y-20 z-20 flex-col justify-center items-center">
+          <div className="left flex flex-col md:text-center w-full justify-center md:-translate-y-0">
+            <h1 className="hero-text xl:text-9xl lg:text-8xl md:text-6xl text-5xl mt-20 mb-3 text-center md:-translate-y-0 text-red-600 md:mx-0 mx-auto">
+              Valentine's Day Special
+            </h1>
+          </div>
+          <div className="right w-full flex flex-col realtive justify-center items-center z-20">
+            <div className="flex gap-4 flex-col items-center">
+              <div className="top flex md:flex-row flex-col items-center md:gap-10 w-max md:mt-0 mt-5">
+                <div className="left">
+                  <h1 className="uppercase font-newSun text-red-600 md:text-5xl text-2xl">
+                    {user?.displayName}
+                  </h1>
+                  <span className="text-xl text-red-400 lowercase text-center">
+                    {user?.email?.split("@")[0].split(".")[0]}
+                  </span>
+                </div>
+                <div className="mid">
+                  <img
+                    src={flyinghearts}
+                    alt="love"
+                    className="md:w-[100px] w-[50px]"
+                  />
+                </div>
+                <div className="right">
+                  <h1 className="font-newSun text-red-600 md:text-5xl text-2xl uppercase">
+                    {crushDetail.fullname}
+                  </h1>
+                  <span className="text-xl text-red-400 text-center">
+                    {crushDetail.roll_number}
+                  </span>
+                </div>
+              </div>
+              <div className="bottom flex gap-4 flex-col">
+                <h1 className=" text-red-600 md:text-5xl text-2xl mt-10">
+                  Your Love Hash
                 </h1>
-                <span className="text-xl text-red-400 lowercase text-center">
-                  {user?.email?.split("@")[0].split(".")[0]}
-                </span>
-              </div>
-              <div className="mid">
-                <img
-                  src={flyinghearts}
-                  alt="love"
-                  className="md:w-[100px] w-[50px]"
-                />
-              </div>
-              <div className="right">
-                <h1 className="font-newSun text-red-600 md:text-5xl text-2xl uppercase">
-                  {crushDetail.fullname}
-                </h1>
-                <span className="text-xl text-red-400 text-center">
-                  {crushDetail.roll_number}
-                </span>
-              </div>
-            </div>
-            <div className="bottom flex gap-4 flex-col">
-              <h1 className=" text-red-600 md:text-5xl text-2xl mt-10">
-                Your Love Hash
-              </h1>
-              <p className="text-xl font-semibold text-black w-60 overflow-auto">
-                {loveHash}
-              </p>
-              <div className="button_group flex gap-4">
-                <button
-                  onClick={handleLockCrush}
-                  className="sign-out bg-pink-400 hover:bg-pink-500 w-max text-white font-bold py-1 px-4 rounded text-base mt-3 flex items-center justify-center gap-4"
-                >
-                  <span>Lock Crush</span>
-                </button>
-                <button
-                  onClick={() => {
-                    setCurrentPage("home");
-                  }}
-                  className="sign-out bg-pink-400 hover:bg-pink-500 w-max text-white font-bold py-1 px-4 rounded text-base mt-3 flex items-center justify-center gap-4"
-                >
-                  <span>Go Back</span>
-                </button>
+                <p className="text-xl font-semibold text-black md:w-72 w-60 overflow-auto">
+                  {loveHash}
+                </p>
+                <div className="button_group flex gap-4">
+                  <button
+                    onClick={handleShowModal}
+                    className="sign-out bg-pink-400 hover:bg-pink-500 w-max text-white font-bold py-1 px-4 rounded text-base mt-3 flex items-center justify-center gap-4"
+                  >
+                    <span>Lock Crush</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      setCurrentPage("home");
+                    }}
+                    className="sign-out bg-pink-400 hover:bg-pink-500 w-max text-white font-bold py-1 px-4 rounded text-base mt-3 flex items-center justify-center gap-4"
+                  >
+                    <span>Go Back</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

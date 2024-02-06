@@ -10,6 +10,10 @@ export default {
       fontFamily: {
         newSun: ["New Sun Regular", "sans-serif"],
       },
+      screens: {
+        small: { raw: "(max-height: 700px)" },
+        // => @media (min-height: 800px) { ... }
+      },
     },
   },
   plugins: [require("daisyui")],

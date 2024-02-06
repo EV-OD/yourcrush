@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import firebase from "firebase/compat/app";
 import useApp from "../hooks/useApp";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
@@ -108,6 +108,56 @@ function Login() {
               className="xl:w-[500px] md:w-[350px] w-[200px] z-20"
             />
           </div>
+        </div>
+      </div>
+      <ExampleComponent />
+    </div>
+  );
+}
+
+function ExampleComponent() {
+  const [showText, setShowText] = useState(false);
+
+  const handleClick = () => {
+    setShowText(!showText);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const helpButton = document.getElementById("helpButton");
+      if (helpButton && !helpButton.contains(event.target)) {
+        setShowText(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <div
+      id="helpButton"
+      className="z-40 absolute bottom-0 left-1/2 -translate-x-1/2 bg-pink-700/80 text-white rounded-t-lg cursor-pointer"
+    >
+      <button onClick={handleClick} className="w-full h-full p-3">
+        <p>How does it work ?</p>
+      </button>
+      <div
+        className={`w-[300px] absolute bottom-full left-1/2 -translate-x-1/2 mt-5 bg-pink-500 text-white p-3 rounded-lg transition-all duration-300 ${
+          showText ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}
+      >
+        <div className="bg-gray-900 text-white p-6 rounded-lg shadow-md">
+          <p className="text-lg font-semibold">
+            Our Application Secures Your Data
+          </p>
+          <p className="mt-2">
+            We hash your data in such a way that it cannot be converted back,
+            ensuring it remains inaccessible to anyone, even our developers.
+          </p>
         </div>
       </div>
     </div>

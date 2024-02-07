@@ -80,8 +80,11 @@ function HashPage() {
           <p className="py-4">You cannot change it again</p>
           <div className="modal-action">
             <form method="dialog" className="flex gap-4 text-white">
-              <button className="btn bg-red-500 px-5">No</button>
-              <button className="btn bg-sky-500 px-5" onClick={handleLockCrush}>
+              <button className="btn bg-red-500 px-5 text-white">No</button>
+              <button
+                className="btn bg-sky-500 px-5 text-white"
+                onClick={handleLockCrush}
+              >
                 Yes
               </button>
             </form>

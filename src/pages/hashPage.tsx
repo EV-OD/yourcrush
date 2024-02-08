@@ -77,7 +77,8 @@ function HashPage() {
       <dialog id="my_modal_2" className="modal w-screen h-screen">
         <div className="modal-box bg-red-400 text-white">
           <h3 className="font-bold text-lg">Are you sure?</h3>
-          <p className="py-4">You cannot change it again</p>
+          <p className="py-4">You cannot enter another crush or change this crush later.</p>
+
           <div className="modal-action">
             <form method="dialog" className="flex gap-4 text-white">
               <button className="btn bg-red-500 px-5 text-white">No</button>

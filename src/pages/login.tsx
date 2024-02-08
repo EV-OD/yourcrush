@@ -152,11 +152,10 @@ function ExampleComponent() {
       >
         <div className="bg-gray-900 text-white p-6 rounded-lg shadow-md">
           <p className="text-lg font-semibold">
-            Our Application Secures Your Data
+            How our application Secures Your Data ?
           </p>
           <p className="mt-2">
-            We hash your data in such a way that it cannot be converted back,
-            ensuring it remains inaccessible to anyone, even our developers.
+            We hash (your+crush) detail alphabetically, thus generated hash will be compared to find match.
           </p>
         </div>
       </div>

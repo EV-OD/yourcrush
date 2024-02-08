@@ -8,7 +8,12 @@ import ThankYouPage from "./thankyou";
 import Modal from "../components/widgets/modal";
 import { useCFirestore } from "../utils";
 import { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  HashRouter,
+} from "react-router-dom";
 import Matched from "./matched";
 
 function Intro() {
@@ -31,7 +36,7 @@ function Intro() {
   return (
     <div className="h-screen">
       <Modal />
-      <Router>
+      <HashRouter>
         <Routes>
           <Route
             path="/"
@@ -53,7 +58,7 @@ function Intro() {
           />
           <Route path="/match" element={<Matched />} />
         </Routes>
-      </Router>
+      </HashRouter>
     </div>
   );
 }

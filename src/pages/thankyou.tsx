@@ -60,8 +60,8 @@ function ThankYouPage() {
               </div>
               <div className="container flex md:flex-row flex-col justify-between items-center text-red-500 max-w-[700px] w-full px-4 gap-10 text-center text-xl">
                 <div className="left">
-                  If you have a match, you will be notified here (personally), ahead of
-                  valentine’s day
+                  If you have a match, you will be notified here (personally),
+                  ahead of valentine’s day
                 </div>
                 <div className="right">Please Share it with your friends</div>
               </div>

@@ -10,6 +10,7 @@ import couple2 from "../assets/couple2.png";
 import usePageStore from "../store/pageStore";
 import useModalStore from "../store/modalStore";
 import { set } from "firebase/database";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 let years = ["076", "077", "078", "079", "080"];
 let courses = ["BCT", "BEL", "BCE", "BAS", "BEI", "BAR", "BME", "BCH"];
@@ -17,6 +18,7 @@ let courses = ["BCT", "BEL", "BCE", "BAS", "BEI", "BAR", "BME", "BCH"];
 function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const { auth } = useApp();
+  const [user] = useAuthState(auth);
   const [year, setYear] = useState("");
   const [course, setCourse] = useState("");
   const [rollNumber, setRollNumber] = useState("");
@@ -57,6 +59,7 @@ function Login() {
         year: year.toLowerCase(),
         course: course.toLowerCase(),
         roll_number: rollNumber.toLowerCase(),
+        username: user?.displayName,
       };
 
       // Remove empty fields from the data object

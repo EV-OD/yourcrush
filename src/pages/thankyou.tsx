@@ -7,6 +7,7 @@ import { useState } from "react";
 import couple2 from "../assets/couple2.png";
 import flyinghearts from "../assets/flyinghearts.png";
 import couple from "../assets/couple.png";
+import { Link } from "react-router-dom";
 
 function ThankYouPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -60,8 +61,12 @@ function ThankYouPage() {
               </div>
               <div className="container flex md:flex-row flex-col justify-between items-center text-red-500 max-w-[700px] w-full px-4 gap-10 text-center text-xl">
                 <div className="left">
-                  If you have a match, you will be notified here (personally),
-                  ahead of valentine’s day
+                  Link to see Result{" "}
+                  <span className="text-sm">(Updated every day at 6 PM)</span>
+                  <br />
+                  <Link to="/match" className="text-blue-500 underline">
+                    Result
+                  </Link>
                 </div>
                 <div className="right">Please Share it with your friends</div>
               </div>

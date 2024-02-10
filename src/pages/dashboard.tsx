@@ -59,7 +59,6 @@ function Login() {
         year: year.toLowerCase(),
         course: course.toLowerCase(),
         roll_number: rollNumber.toLowerCase(),
-        username: user?.displayName,
       };
 
       // Remove empty fields from the data object
